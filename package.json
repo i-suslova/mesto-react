@@ -19,7 +19,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "author": "Irina Suslova",
-    "homepage": "https://i-suslova.github.io/mesto-react /"
+    "homepage": "https://i-suslova.github.io/mesto-react/"
+  
     
   },
   "eslintConfig": {
