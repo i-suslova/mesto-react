@@ -9,7 +9,7 @@ function Card(props) {
     <article className="element" key={props.card._id}>
       <img
         src={props.card.link}
-        alt=""
+      alt={`${props.title}.`}
         className="element__photo"
         style={{ backgroundImage: `url(${props.src})` }}
         onClick={handleClick}
