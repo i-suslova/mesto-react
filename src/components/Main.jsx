@@ -80,6 +80,7 @@ function Main(props) {
             src={card.link}
             like={card.likes}
             title={card.name}
+            alt={card.name} 
           />
         ))}
       </section>
