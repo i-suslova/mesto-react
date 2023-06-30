@@ -16,10 +16,15 @@ function PopupWithForm(props) {
         ></button>
         <h2 className="popup__title">{props.title}</h2>
 
-        <form className="popup__form" name={`form-${props.name}`} method="post">
+        <form
+          className="popup__form"
+          name={`form-${props.name}`}
+          method="post"
+          onSubmit={props.onSubmit}
+        >
           {props.children}
-          <button type="submit" className="popup__button" disabled>
-          {props.buttonText}
+          <button type="submit" className="popup__button">
+            {props.buttonText}
           </button>
         </form>
       </div>
