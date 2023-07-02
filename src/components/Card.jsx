@@ -37,9 +37,9 @@ function Card(props) {
     <article className="element" key={props.card._id}>
       <img
         src={props.card.link}
-        alt={`${props.title}.`}
+        alt={`${props.card.name}.`}
         className="element__photo"
-        style={{ backgroundImage: `url(${props.src})` }}
+        style={{ backgroundImage: `url(${props.card.link})` }}
         onClick={handleClick}
       />
       {isOwn && (
@@ -51,7 +51,7 @@ function Card(props) {
         ></button>
       )}
 
-      <h2 className="element__title">{props.title}</h2>
+      <h2 className="element__title">{props.card.name}</h2>
       <div className="element__likes">
         <button
           type="button"
@@ -59,7 +59,7 @@ function Card(props) {
           aria-label="нравится"
           onClick={handleLikeClick}
         ></button>
-        <span className="element__number-like">{props.like.length}</span>
+       <span className="element__number-like">{props.card.likes.length}</span>
       </div>
     </article>
   );
