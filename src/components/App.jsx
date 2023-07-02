@@ -85,14 +85,13 @@ function App() {
       .deletePersonalCard(card._id)
       .then(() => {
         setCards((state) => state.filter((c) => c._id !== card._id));
-       
+        closeAllPopups();
       })
       .catch((error) => {
         console.error(error);
       })
       .finally(() => {
         setIsLoading(false);
-        closeAllPopups();
       });
   };
 
@@ -131,13 +130,13 @@ function App() {
       .getUserId(user)
       .then((data) => {
         setCurrentUser(data); // Обновляем стейт currentUser
+        closeAllPopups(); // Закрываем все модальные окна
       })
       .catch((error) => {
         console.error(error);
       })
       .finally(() => {
         setIsLoading(false);
-        closeAllPopups(); // Закрываем все модальные окна
       });
   }
 
@@ -147,13 +146,13 @@ function App() {
       .editAvatar(data)
       .then((data) => {
         setCurrentUser(data); // Обновляем стейт currentUser
+        closeAllPopups(); // Закрываем все модальные окна
       })
       .catch((error) => {
         console.error(error);
       })
       .finally(() => {
         setIsLoading(false);
-        closeAllPopups(); // Закрываем все модальные окна
       });
   }
 
@@ -164,13 +163,13 @@ function App() {
       .then((data) => {
         const newCard = data;
         setCards([newCard, ...cards]);
+        closeAllPopups(); // Закрываем все модальные окна
       })
       .catch((error) => {
         console.error(error);
       })
       .finally(() => {
         setIsLoading(false);
-        closeAllPopups(); // Закрываем все модальные окна
       });
   }
 
