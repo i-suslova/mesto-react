@@ -5,6 +5,13 @@ function EditAvatarPopup(props) {
   //записываем объект, возвращаемый хуком, в переменную
   const EditAvatarPopupRef = React.useRef();
 
+  // очищаем поле ввода при открытии формы
+  React.useEffect(() => {
+    {
+      EditAvatarPopupRef.current.value = "";
+    }
+  }, [props.isOpen]);
+
   function handleSubmit(e) {
     e.preventDefault();
 
