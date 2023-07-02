@@ -3,7 +3,7 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Card(props) {
   const currentUser = React.useContext(CurrentUserContext);
- // const card = props.card;
+ 
   // Определяем, являемся ли мы владельцем текущей карточки
   //const isOwn = card.owner._id === currentUser._id;
   const isOwn = props.card.owner._id === currentUser._id;
@@ -26,10 +26,12 @@ function Card(props) {
   };
 
   // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
-const isLiked = props.card.likes.some(i => i._id === currentUser._id);
+  const isLiked = props.card.likes.some((i) => i._id === currentUser._id);
 
-//Создаём переменную, которую после зададим в `className` для кнопки лайка
-const cardLikeButtonClassName = `element__button-like ${isLiked ? "element__button-like_activ" : ""}`;
+  //Создаём переменную, которую после зададим в `className` для кнопки лайка
+  const cardLikeButtonClassName = `element__button-like ${
+    isLiked ? "element__button-like_activ" : ""
+  }`;
 
   return (
     <article className="element" key={props.card._id}>
@@ -40,13 +42,13 @@ const cardLikeButtonClassName = `element__button-like ${isLiked ? "element__butt
         style={{ backgroundImage: `url(${props.src})` }}
         onClick={handleClick}
       />
-       {isOwn && (
-      <button
-        type="button"
-        className={cardDeleteButtonClassName}
-        aria-label="удалить"
-        onClick={handleDeleteClick}
-      ></button>
+      {isOwn && (
+        <button
+          type="button"
+          className={cardDeleteButtonClassName}
+          aria-label="удалить"
+          onClick={handleDeleteClick}
+        ></button>
       )}
 
       <h2 className="element__title">{props.title}</h2>
@@ -57,12 +59,10 @@ const cardLikeButtonClassName = `element__button-like ${isLiked ? "element__butt
           aria-label="нравится"
           onClick={handleLikeClick}
         ></button>
-       <span className="element__number-like">{props.like.length}</span>
-       {/* <span className="element__number-like">{props.card.likes.length}</span> */}
+        <span className="element__number-like">{props.like.length}</span>
       </div>
     </article>
   );
 }
 
 export default Card;
-

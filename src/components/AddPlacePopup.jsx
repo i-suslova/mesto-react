@@ -34,7 +34,7 @@ function AddPlacePopup(props) {
     <PopupWithForm
       title="Новое место"
       name="picture"
-      buttonText={"Создать"}
+      buttonText="Создать"
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={handleSubmit}
@@ -63,6 +63,9 @@ function AddPlacePopup(props) {
         onChange={handleLinkChange}
       />
       <span className="popup__error input-link-error"></span>
+      <button type="submit" className="popup__button">
+      {props.isLoading ? "Сохранение..." : props.buttonText}
+      </button>
     </PopupWithForm>
   );
 }
