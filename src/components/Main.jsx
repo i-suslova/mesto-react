@@ -51,10 +51,6 @@ function Main(props) {
             onCardDelete={props.onCardDelete}
             onCardLike={props.onCardLike}
             key={card._id}
-            src={card.link}
-            like={card.likes}
-            title={card.name}
-            alt={card.name}
             owner={card.owner}
           />
         ))}
