@@ -193,24 +193,21 @@ function App() {
             isOpen={isEditProfilePopupOpen}
             onClose={closeAllPopups}
             onUpdateUser={handleUpdateUser}
-            buttonText={"Сохранить"}
-            isLoading={isLoading} 
+            isLoading={isLoading}
           />
 
           <EditAvatarPopup
             isOpen={isEditAvatarPopupOpen}
             onClose={closeAllPopups}
             onUpdateAvatar={handleUpdateAvatar}
-            buttonText={"Сохранить"}
-            isLoading={isLoading} 
+            isLoading={isLoading}
           />
 
           <AddPlacePopup
             isOpen={isAddPlacePopupOpen}
             onClose={closeAllPopups}
             onAddPlace={handleAddPlaceSubmit}
-            buttonText={"Создать"}
-            isLoading={isLoading} 
+            isLoading={isLoading}
           />
 
           <PictureDeletePopup
@@ -218,8 +215,7 @@ function App() {
             onClose={closeAllPopups}
             deletedCard={deletedCard}
             onCardDelete={handleCardDelete}
-            buttonText={"Да"}
-            isLoading={isLoading} 
+            isLoading={isLoading}
           />
 
           <ImagePopup card={selectedCard} onClose={closeAllPopups} />

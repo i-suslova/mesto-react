@@ -44,6 +44,8 @@ function EditProfilePopup(props) {
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={handleSubmit}
+      isLoading={props.isLoading}
+      loadingButtonText="Сохранение..."
     >
       <input
         type="text"
@@ -69,10 +71,6 @@ function EditProfilePopup(props) {
         onChange={handleDescriptionChange}
       />
       <span className="popup__error input-job-error"></span>
-
-      <button type="submit" className="popup__button">
-        {props.isLoading ? "Сохранение..." : props.buttonText}
-      </button>
     </PopupWithForm>
   );
 }

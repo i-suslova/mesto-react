@@ -38,6 +38,8 @@ function AddPlacePopup(props) {
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={handleSubmit}
+      isLoading={props.isLoading}
+      loadingButtonText="Сохранение..."
     >
       <input
         type="text"
@@ -63,9 +65,6 @@ function AddPlacePopup(props) {
         onChange={handleLinkChange}
       />
       <span className="popup__error input-link-error"></span>
-      <button type="submit" className="popup__button">
-      {props.isLoading ? "Сохранение..." : props.buttonText}
-      </button>
     </PopupWithForm>
   );
 }
